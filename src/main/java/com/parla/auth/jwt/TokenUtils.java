@@ -15,9 +15,7 @@ import java.util.Date;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import static com.parla.auth.AuthConstants.ACCESS_TOKEN_VALIDITY_SECONDS;
-import static com.parla.auth.AuthConstants.AUTHORITIES_KEY;
-import static com.parla.auth.AuthConstants.SIGNING_KEY;
+import static com.parla.auth.AuthConstants.*;
 
 @Component
 public class TokenUtils implements Serializable {
@@ -25,7 +23,6 @@ public class TokenUtils implements Serializable {
         public String getUsernameFromToken(String token) {
             return getClaimFromToken(token, Claims::getSubject);
         }
-
         public Date getExpirationDateFromToken(String token) {
             return getClaimFromToken(token, Claims::getExpiration);
         }

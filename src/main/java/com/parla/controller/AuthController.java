@@ -2,9 +2,8 @@ package com.parla.controller;
 
 import com.parla.auth.jwt.TokenUtils;
 import com.parla.pojo.AuthToken;
-import com.parla.pojo.LoginUser;
 import com.parla.pojo.User;
-import com.parla.pojo.validation.ValidationStatus;
+import com.parla.pojo.front.LoginUser;
 import com.parla.service.UserService;
 import com.parla.service.UserValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,9 +56,9 @@ public class AuthController {
 
     @PostMapping(value = "/register", consumes = MediaType.APPLICATION_JSON_VALUE)
     public void register(@RequestBody User user) {
-        if (!ValidationStatus.OK.equals(userValidationService.validateUser(user))) {
-            return;
-        }
+//        if (!ValidationStatus.OK.equals(userValidationService.validateUser(user))) {
+//            return;
+//        }
         userService.save(user);
     }
 

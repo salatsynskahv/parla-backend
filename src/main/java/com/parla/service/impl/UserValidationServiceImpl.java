@@ -1,6 +1,6 @@
 package com.parla.service.impl;
 
-import com.parla.pojo.User;
+import com.parla.pojo.front.LoginUser;
 import com.parla.pojo.validation.ValidationStatus;
 import com.parla.service.UserValidationService;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class UserValidationServiceImpl implements UserValidationService {
 
     //todo add validation on email and existing user
-    public ValidationStatus validateUser(User user){
+    public ValidationStatus validateUser(LoginUser user){
         return ValidationStatus.OK;
     }
 
